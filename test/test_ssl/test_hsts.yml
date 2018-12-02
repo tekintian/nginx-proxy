@@ -25,7 +25,7 @@ web3:
     HSTS: "max-age=86400; includeSubDomains; preload"
 
 sut:
-  image: jwilder/nginx-proxy:test
+  image: tekintian/nginx-proxy:test
   volumes:
     - /var/run/docker.sock:/tmp/docker.sock:ro
     - ../lib/ssl/dhparam.pem:/etc/nginx/dhparam/dhparam.pem:ro

@@ -1,5 +1,5 @@
 FROM nginx:1.15.7
-LABEL maintainer="tekintian@gmail.com"
+LABEL maintainer="TekinTian tekintian@gmail.com"
 
 # Install wget and install/updates certificates
 RUN apt-get update \
@@ -18,9 +18,9 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf \
 ADD https://github.com/jwilder/forego/releases/download/v0.16.1/forego /usr/local/bin/forego
 RUN chmod u+x /usr/local/bin/forego
 
-ENV DOCKER_GEN_VERSION 0.7.4.1
+ENV DOCKER_GEN_VERSION 0.7.4
 
-RUN wget https://github.com/tekintian/docker-gen/releases/download/$DOCKER_GEN_VERSION/docker-gen-linux-amd64-$DOCKER_GEN_VERSION.tar.gz \
+RUN wget https://github.com/jwilder/docker-gen/releases/download/$DOCKER_GEN_VERSION/docker-gen-linux-amd64-$DOCKER_GEN_VERSION.tar.gz \
  && tar -C /usr/local/bin -xvzf docker-gen-linux-amd64-$DOCKER_GEN_VERSION.tar.gz \
  && rm /docker-gen-linux-amd64-$DOCKER_GEN_VERSION.tar.gz
 
